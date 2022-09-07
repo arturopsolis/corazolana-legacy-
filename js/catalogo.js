@@ -1016,7 +1016,7 @@ const productos = [
     id: "29",
     nombre: "Gancho 3 mm",
     tachado: "60.00",
-    precio: "AGOTADOS",
+    precio: "60.00",
     composicion: "Gancho de aluminio con mango de bambú de 3 mm pintado a mano",
     peso: "5.9 gr",
     metros: "13.5 cm",
@@ -1029,18 +1029,18 @@ const productos = [
     colores: [
       [
         "Durazno 3.5mm",
-        1,
+        0,
         "gancho_bambu_crochet_3mm-duraznohojas.jpg",
         "#0C46A2",
       ],
-      ["Naranjas", 1, "gancho_bambu_crochet_3mm-naranjas.jpg", "#0C46A2"],
+      ["Naranjas", 0, "gancho_bambu_crochet_3mm-naranjas.jpg", "#0C46A2"],
     ],
   },
   {
     id: "30",
     nombre: "Gancho 4 mm",
     tachado: "60.00",
-    precio: "AGOTADOS",
+    precio: "60.00",
     composicion: "Gancho de aluminio con mango de bambú de 4 mm pintado a mano",
     peso: "5.9 gr",
     metros: "13.5 cm",
@@ -1051,9 +1051,9 @@ const productos = [
     enlace: "",
     categoria: "",
     colores: [
-      ["Aqua", 1, "gancho_bambu_crochet_4mm-aquaflores.jpg", "#0C46A2"],
-      ["Durazno", 1, "gancho_bambu_crochet_4mm-duraznohojas.jpg", "#0C46A2"],
-      ["Naranjas", 1, "gancho_bambu_crochet_4mm-naranjas.jpg", "#0C46A2"],
+      ["Aqua", 0, "gancho_bambu_crochet_4mm-aquaflores.jpg", "#0C46A2"],
+      ["Durazno", 0, "gancho_bambu_crochet_4mm-duraznohojas.jpg", "#0C46A2"],
+      ["Naranjas", 0, "gancho_bambu_crochet_4mm-naranjas.jpg", "#0C46A2"],
     ],
   },
   {
