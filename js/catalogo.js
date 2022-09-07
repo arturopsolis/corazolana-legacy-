@@ -2,8 +2,8 @@ const productos = [
   {
     id: "0",
     nombre: "Marcadores de Flores",
-    tachado: "75.00",
-    precio: "AGOTADO",
+    tachado: "80.00",
+    precio: "75.00",
     composicion: "Marcadores para crochet",
     peso: "4 pz",
     metros: "n/a",
@@ -16,7 +16,7 @@ const productos = [
     colores: [
       ["No.1", 0, "marcadores-flores-gr-1.jpg", "#0C46A2"],
       ["No.2", 0, "marcadores-flores-gr-2.jpg", "#0C46A2"],
-      ["No.3", 2, "marcadore-de-puntos-crochet-tejido-flores.jpg", "#0C46A2"],
+      ["No.3", 0, "marcadore-de-puntos-crochet-tejido-flores.jpg", "#0C46A2"],
     ],
   },
   {
@@ -1101,13 +1101,13 @@ const productos = [
     colores: [
       [
         "Aqua",
-        3,
+        0,
         "hilo-lana-natural-textil-tejido-mexico-rustica-aqua.jpg",
         "#0C46A2",
       ],
       [
         "Camel",
-        3,
+        0,
         "hilo-lana-natural-textil-tejido-mexico-rustica-camel2.jpg",
         "#0C46A2",
       ],
@@ -1177,16 +1177,33 @@ crearCatalogo = function () {
   let holderHTML = "";
   let len = productos.length - 1;
   for (let i = len; i >= 0; i--) {
-    holderHTML += `<div class="producto ${productos[i].categoria}" onclick="mostrarInfo(${productos[i].id})">
-								<img class="d-block w-100" src="images/productos/${productos[i].carpeta}/${productos[i].imagenes[0]}" alt="${productos[i].nombre}">
+    let $variaciones = productos[i].colores.filter((item) => {
+      if (item[1] > 0) {
+        return item;
+      }
+    });
+
+    if ($variaciones.length !== 0) {
+      holderHTML += `<div class="producto ${productos[i].categoria}" onclick="mostrarInfo(${productos[i].id})">`;
+    } else {
+      holderHTML += `<div class="producto ${productos[i].categoria}")" style="pointer-events: none;">`;
+    }
+
+    holderHTML += `<img class="d-block w-100" src="images/productos/${productos[i].carpeta}/${productos[i].imagenes[0]}" alt="${productos[i].nombre}">
 								<div class="detalles">
 									<div class="nombre">${productos[i].nombre}</div>`;
+
+    if ($variaciones.length === 0) {
+      console.log(productos[i].nombre, " ", $variaciones.length, $variaciones);
+    }
 
     if (productos[i]["precio"] == "Gratis") {
       holderHTML +=
         '<div class="precio"><span class="rojo">' +
         productos[i]["precio"] +
         "</span></div>";
+    } else if ($variaciones.length === 0) {
+      holderHTML += '<div class="precio">AGOTADO</div>';
     } else {
       if (!productos[i]["tachado"]) {
         holderHTML +=
@@ -1279,121 +1296,125 @@ mostrarInfo = function (seleccionado) {
     }
   });
 
-  let $nombrePrimerVariacion = $variacionesNewArr[0][0];
-  let $unidadesPrimerVariacion = $variacionesNewArr[0][1];
-  let imagenProducto = document.getElementById("imagen-producto");
-  let holder = "";
+  console.log($variacionesNewArr.length);
 
-  imagenProducto.innerHTML = `<img src="images/productos/${$carpeta}/${productos[seleccionado]["colores"][0][2]}" id="imagen-producto-img">`;
+  if ($variacionesNewArr.length > 0) {
+    let $nombrePrimerVariacion = $variacionesNewArr[0][0];
+    let $unidadesPrimerVariacion = $variacionesNewArr[0][1];
+    let imagenProducto = document.getElementById("imagen-producto");
+    let holder = "";
 
-  // +++++++++++++++++++ start HOLDER +++++++++++++++++++++++
-  holder += `<div class="heading">
-						<h2 id="nombre-producto" class="nombre-producto">${$nombreProducto}</h2>`;
-  if ($variacionesNewArr.length > 1) {
-    holder += `<h3 id="color-seleccionado" class="color-seleccionado">${$nombrePrimerVariacion}</h3>
-					</div>`;
-  } else {
-    holder += `</div>`;
+    imagenProducto.innerHTML = `<img src="images/productos/${$carpeta}/${productos[seleccionado]["colores"][0][2]}" id="imagen-producto-img">`;
+
+    // +++++++++++++++++++ start HOLDER +++++++++++++++++++++++
+    holder += `<div class="heading">
+              <h2 id="nombre-producto" class="nombre-producto">${$nombreProducto}</h2>`;
+    if ($variacionesNewArr.length > 1) {
+      holder += `<h3 id="color-seleccionado" class="color-seleccionado">${$nombrePrimerVariacion}</h3>
+            </div>`;
+    } else {
+      holder += `</div>`;
+    }
+    if ($variacionesNewArr.length > 1) {
+      holder += `<div class="row">
+              <div class="col col-12">
+                <ul class="menu-colores" id="menu-colores">${crearMenuColores(
+                  $variacionesNewArr,
+                  $carpeta
+                )}</ul>
+              </div>
+            </div>
+            `;
+    }
+
+    holder += `<div class="col col-12 no-padding">
+            <p class="descripcion">`;
+
+    //Composición: ${$composicion} <br>
+    //Peso: 		 ${$peso}	<br>
+    //Metros: 	 ${$metros} <br>
+    //Grosor: 	 ${$grosor} <br>
+    //Agujas: 	 ${$agujas}
+
+    if (
+      $composicion !== "" ||
+      $composicion !== "n/a" ||
+      $composicion !== undefined ||
+      $composicion !== null
+    ) {
+      holder += `Composición: ${$composicion} <br>`;
+    }
+    if (
+      $peso !== "" &&
+      $peso !== "n/a" &&
+      $peso !== undefined &&
+      $peso !== null
+    ) {
+      holder += `Peso: ${$peso} <br>`;
+    }
+    if (
+      $metros !== "" &&
+      $metros !== "n/a" &&
+      $metros !== undefined &&
+      $metros !== null
+    ) {
+      holder += `Metros: ${$metros} <br>`;
+    }
+    if (
+      $grosor !== "" &&
+      $grosor !== "n/a" &&
+      $grosor !== undefined &&
+      $grosor !== null
+    ) {
+      holder += `Grosor: ${$grosor} <br>`;
+    }
+    if (
+      $agujas !== "" &&
+      $agujas !== "n/a" &&
+      $agujas !== undefined &&
+      $agujas !== null
+    ) {
+      holder += `Agujas: ${$agujas} <br>`;
+    }
+
+    holder += `</p>
+        </div>	              	
+    </div>`;
+
+    if ($unidadesPrimerVariacion > 0) {
+      holder += `<div class="row">
+                <div class="col col-4">
+                  <!--label>Unidades:</label-->
+                  <select class="unidades" id="unidades">${crearUnidades(
+                    $variacionesNewArr[0][1]
+                  )}</select>
+                </div>`;
+    }
+    holder += `<div class="col col-8">
+                <!--label>Precio:</label-->
+                <p class="precio" id="precio">$${$precio} MXN</p>
+              </div>	              	
+          </div>`;
+
+    if ($variacionesNewArr[0][1] > 0) {
+      holder += `<button id="agregar" class="agregar"><i class="fas fa-plus"></i> Agregar a pedido</button>`;
+    } else {
+      holder += `<button id="agregar" class="agregar disabled" disabled>Producto Agotado</button>`;
+    }
+
+    holder += `<div id="notificacion" class="notificacion"></div>`;
+
+    // +++++++++++++++++++ end: HOLDER +++++++++++++++++++++++
+
+    divDetalleProducto.innerHTML = holder;
+    document.getElementById("modal--detalle-producto").classList.add("active");
+
+    let btnAgregar = document.getElementById("agregar");
+    btnAgregar.addEventListener("click", function (e) {
+      e.preventDefault();
+      agregarArticulo();
+    });
   }
-  if ($variacionesNewArr.length > 1) {
-    holder += `<div class="row">
-						<div class="col col-12">
-							<ul class="menu-colores" id="menu-colores">${crearMenuColores(
-                $variacionesNewArr,
-                $carpeta
-              )}</ul>
-						</div>
-					</div>
-					`;
-  }
-
-  holder += `<div class="col col-12 no-padding">
-          <p class="descripcion">`;
-
-  //Composición: ${$composicion} <br>
-  //Peso: 		 ${$peso}	<br>
-  //Metros: 	 ${$metros} <br>
-  //Grosor: 	 ${$grosor} <br>
-  //Agujas: 	 ${$agujas}
-
-  if (
-    $composicion !== "" ||
-    $composicion !== "n/a" ||
-    $composicion !== undefined ||
-    $composicion !== null
-  ) {
-    holder += `Composición: ${$composicion} <br>`;
-  }
-  if (
-    $peso !== "" &&
-    $peso !== "n/a" &&
-    $peso !== undefined &&
-    $peso !== null
-  ) {
-    holder += `Peso: ${$peso} <br>`;
-  }
-  if (
-    $metros !== "" &&
-    $metros !== "n/a" &&
-    $metros !== undefined &&
-    $metros !== null
-  ) {
-    holder += `Metros: ${$metros} <br>`;
-  }
-  if (
-    $grosor !== "" &&
-    $grosor !== "n/a" &&
-    $grosor !== undefined &&
-    $grosor !== null
-  ) {
-    holder += `Grosor: ${$grosor} <br>`;
-  }
-  if (
-    $agujas !== "" &&
-    $agujas !== "n/a" &&
-    $agujas !== undefined &&
-    $agujas !== null
-  ) {
-    holder += `Agujas: ${$agujas} <br>`;
-  }
-
-  holder += `</p>
-			</div>	              	
-  </div>`;
-
-  if ($unidadesPrimerVariacion > 0) {
-    holder += `<div class="row">
-							<div class="col col-4">
-								<!--label>Unidades:</label-->
-								<select class="unidades" id="unidades">${crearUnidades(
-                  $variacionesNewArr[0][1]
-                )}</select>
-							</div>`;
-  }
-  holder += `<div class="col col-8">
-							<!--label>Precio:</label-->
-							<p class="precio" id="precio">$${$precio} MXN</p>
-						</div>	              	
-				</div>`;
-
-  if ($variacionesNewArr[0][1] > 0) {
-    holder += `<button id="agregar" class="agregar"><i class="fas fa-plus"></i> Agregar a pedido</button>`;
-  } else {
-    holder += `<button id="agregar" class="agregar disabled" disabled>Producto Agotado</button>`;
-  }
-
-  holder += `<div id="notificacion" class="notificacion"></div>`;
-
-  // +++++++++++++++++++ end: HOLDER +++++++++++++++++++++++
-
-  divDetalleProducto.innerHTML = holder;
-  document.getElementById("modal--detalle-producto").classList.add("active");
-
-  let btnAgregar = document.getElementById("agregar");
-  btnAgregar.addEventListener("click", function (e) {
-    e.preventDefault();
-    agregarArticulo();
-  });
 };
 
 // +++++++++++++++++++ BTN CERRAR +++++++++++++++++++++
