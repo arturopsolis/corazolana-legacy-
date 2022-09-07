@@ -1,0 +1,268 @@
+
+section.portada{
+    position:relative;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .layers{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left: 0;
+
+        .layer{
+            display: block;
+            position: absolute;
+        }
+
+        &.back-nubes{
+            background-image: url(../images/nube_blanca.png), url(../images/nube_azul.png);
+            background-repeat: repeat-x, repeat-x;
+            background-position: bottom -93px right 0, bottom -80px left 0;
+            animation: backAnim 120s linear infinite alternate-reverse;
+            @media (max-width: 575.98px){
+                animation: backAnimMobile 120s linear infinite alternate-reverse;
+            }
+        }
+
+    }
+
+    // +++++++++++ FRASE RANDOM +++++++++++++++++++++++
+
+    .fraseRandom{
+        display: block;
+        position:relative;
+        top:30px;
+        z-index:9999;
+
+        .frase{
+            display: block;
+            max-width: 600px;
+            font-family: $font-3;
+            font-size: 1.2em;
+            text-align: center;
+            color: #154272;
+            padding: 15px 15px;
+
+            @media (max-width: 575.98px){
+                font-size: 1em;
+            }
+        }
+        .autor{
+            font-family: $font-1;
+            font-size:1.2em;
+            text-align: center;
+            text-transform: uppercase;
+            @media (max-width: 575.98px){
+                font-size: 1em;
+            }
+        }
+
+        .logo-kitnube{
+            display: block;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius:  50%;
+            padding:30px; 
+            img{
+                display: block;
+                position: relative;
+                left: -4px;
+                top: 4px;
+            }
+        }
+    }
+
+    // +++++++++++ ELEMENTOS DIA ++++++++++++++++++++++
+    &.portada-dia{ 
+        background-color: #CBEBF7;
+
+        .fraseRandom .frase{ color: #154272 }
+        .fraseRandom .autor{color: #50858C;}
+
+
+        .layer{
+
+            &.nube{
+                transform: translateY(0);
+                transform-origin: top center;
+                animation: balanceoAnim 4s ease-in-out infinite alternate;
+
+                &.nube-1{
+                    left: 6%;
+                    top: -8%;
+                    animation-duration: 4.2s;
+                }
+                &.nube-2{
+                    left: 59%;
+                    top: -7%;
+                    animation-duration: 4.6s;
+                }
+                &.nube-3{
+                    right: 8%;
+                    top: -8%;
+                    animation-duration: 5s;
+                }
+
+            }
+
+            @media (max-width:575.98px){
+                &.nube-1, &.nube-2, &.nube-3{
+                    display: none;
+                } 
+            }
+
+            &.sol{
+                width: 255px;
+                left: 18%;
+                top: -8%;
+                transform-origin: top center;
+                animation: caidaReboteAnim 2s ease-out forwards;
+
+                @media (max-width:575.98px){
+                    width: 180px;
+                    top: -10px;
+                    left: 23%;
+                }
+            }
+        }
+    }
+
+    // +++++++++++ ELEMENTOS NOCHE ++++++++++++++++++++++
+    &.portada-noche{ 
+        background-color: #001739;
+
+        .fraseRandom .frase{ color: #ffffff }
+
+        .fraseRandom .autor{ color: #F39F91; }
+
+        .layer{
+
+            &.estrella{
+                opacity:0;
+                transform: scale(0);
+                transform-origin: center center;
+                animation: popAnim 0.5s ease-out forwards;
+
+                &.estrella-1{ left: 6%; top: 28%; animation-delay:0;}
+                &.estrella-2{ left: 30%; top: 7%; animation-delay:0.2s;}
+                &.estrella-3{ left: 14%; top: 44%; animation-delay:0.3s;}
+                &.estrella-4{ right: 39%; top: 11%; animation-delay:0.2s;}
+                &.estrella-5{ right: 4%; top: 6%; animation-delay:0.3s;}
+                &.estrella-6{ right: 9%; top: 47%; animation-delay:0.4s;}
+            }
+
+            &.nube{
+                transform: translateY(0);
+                transform-origin: top center;
+                animation: balanceoAnim 4s ease-in-out infinite alternate;
+
+                &.nube-1{  
+                    left: 14%;
+                    top: -1%;
+                    animation-duration: 4.2s;
+                }
+                &.nube-2{
+                    left: 69%;
+                    top: -7%;
+                    animation-duration: 4.6s;
+                }
+            }
+
+            @media (max-width:575.98px){
+                &.nube-1, 
+                &.nube-2, 
+                &.estrella-1, 
+                &.estrella-2, 
+                &.estrella-3, 
+                &.estrella-5,
+                &.estrella-6{
+                    display: none;
+                } 
+                &.estrella-4{
+                    right: 25% !important;
+                    top: 90px !important;
+                }
+            }
+
+            &.luna{
+                width: 255px;
+                left: 35%;
+                top: -10px;
+                transform-origin: top center;
+                animation: caidaReboteAnim 2s ease-out forwards;
+
+                @media (max-width:575.98px){
+                    width: 180px;
+                    left: 12%;
+                    top: -10px;
+                }
+            }
+        }
+    }
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+    .bottom-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        height:auto;
+        bottom: 0;
+        left:0; 
+        z-index:9999;
+
+        .logo-nubes{
+            display: block;
+            position: relative;
+            width: 159px;
+            padding:15px;
+            border-radius: 50%;
+            background-color: #fff;
+            top: 15px;
+
+            @media (max-width: 575.98px){
+                width: 130px;
+                padding: 10px;
+                top: 30px;
+            }
+
+            img{
+                display:block;
+                position:relative;
+                transform: translateX(-5px);
+            }
+        }
+
+        .flecha{
+            display: block;
+            position:relative;
+            margin:30px;
+            width:20px;
+            animation: flechaAnim 0.6s ease-in alternate infinite;
+
+            @media (max-width:575.98px){
+                margin: 15px;
+                width: 20px;
+            }
+        }
+    }
+
+}
+
+.portada-dia{
+    display: none;
+}

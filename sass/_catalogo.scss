@@ -1,0 +1,375 @@
+/* +++++++++ CATALOGO UNIFORMES++++++ */
+ul.catalogo-list {
+  display: block;
+  position: relative;
+  margin: 30px 0 60px 0;
+  padding: 15px;
+  list-style: none;
+  height: auto;
+  overflow: auto;
+
+  li {
+    display: block;
+    position: relative;
+    width: 23%;
+    float: left;
+    padding: 0;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 30px;
+    background-color: #fff;
+    text-align: center;
+    @include border-radius(10px);
+    overflow: hidden;
+    @media (max-width: 767px) {
+      width: 48%;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    img {
+      display: inline-block;
+      position: relative;
+      margin: 10px 0;
+      width: 50%;
+      height: auto;
+    }
+
+    .info-container {
+      display: block;
+      position: relative;
+      padding: 15px;
+      background-color: #f6f6f6;
+      height: 115px;
+
+      p.marca {
+        display: block;
+        position: relative;
+        text-align: center;
+        margin: 0;
+        span {
+          display: block;
+        }
+
+        span.modelo {
+          font-weight: bold;
+          color: $color1;
+        }
+        span.codigo {
+          font-style: italic;
+          color: #666;
+          font-size: 11px;
+        }
+        .nombre.uppercase {
+          text-transform: uppercase;
+        }
+      }
+      p.categoria {
+        text-align: left;
+        color: #666;
+      }
+      p.precio {
+        text-align: center;
+        color: #000;
+        font-size: 16px;
+        color: #000;
+        margin-top: 15px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* +++++++++ CATALOGO CORAZOLANA ++++++ */
+
+.catalogo {
+  padding: 0;
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (max-width: 575.98px) {
+    margin: 30px 0;
+    justify-content: center;
+  }
+
+  .producto {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 30px;
+
+    @media (max-width: 575.98px) {
+      max-width: 160px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    .carousel {
+      width: 100%;
+    }
+    img {
+      display: block;
+      position: relative;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .detalles {
+      padding: 24px 0 14px 0;
+      @media (max-width: 767px) {
+        padding: 15px 0 15px 0;
+      }
+
+      .nombre {
+        font-size: 16px;
+        font-family: "Roboto";
+        text-align: center;
+        font-weight: bold;
+        padding: 0;
+      }
+      .precio {
+        font-size: 16px;
+        font-family: "Roboto";
+        text-align: center;
+        padding: 0;
+        color: #b12704;
+        font-weight: bold;
+
+        span.tachado {
+          text-decoration: line-through;
+          color: #999;
+          font-size: 16px;
+          font-weight: normal;
+        }
+        span.rojo {
+          font-weight: 700;
+          color: #b12704;
+        }
+      }
+    }
+  }
+}
+
+/* ++++++++++ VENTANA EMERGENTE +++++++ */
+
+.ventana-emergente,
+.modal--detalle-producto {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  transition: opacity 0.5s ease-out;
+
+  @media (max-width: 767px) {
+    padding-top: 0;
+  }
+
+  &.active {
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.5s ease-in;
+
+    .detalle {
+      animation: fadeInUp 1s ease forwards;
+      @keyframes fadeInUp {
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  a.btn-close {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    color: #000;
+    font-size: 26px;
+    line-height: 0;
+    opacity: 0.2;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .detalleFullContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .detalle {
+    opacity: 0;
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.5);
+    top: -30px;
+    transform: translateY(20%);
+    @include border-radius(10px);
+
+    transition: all 0.5s ease-in;
+
+    @media (max-width: 767px) {
+      padding: 30px 30px 90px 30px;
+      overflow: scroll;
+      height: 100%;
+      top: 0;
+      @include border-radius(0);
+    }
+
+    .imagen-producto img {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+      border-radius: 10px;
+      @media (max-width: 767px) {
+        width: 100%;
+        margin: 0 0px 30px 0;
+      }
+    }
+
+    .detalle-producto {
+      .heading {
+        display: block;
+        position: relative;
+        margin-bottom: 15px;
+        border-left: 4px solid $color3;
+        padding: 8px 15px;
+        h2 {
+          font-family: "Roboto", sans-serif;
+          font-size: 24px;
+          padding: 0;
+          margin: 0;
+        }
+        h3 {
+          font-family: "Roboto", sans-serif;
+          font-size: 18px;
+          padding: 0;
+          margin: 5px 0 0 0;
+        }
+      }
+
+      select {
+        display: block;
+        position: relative;
+        width: 100%;
+        font-size: 16px;
+        padding: 5px 5px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+
+      button.agregar {
+        display: block;
+        position: relative;
+        margin-top: 15px;
+        color: #fff;
+        background-color: $color3;
+        border: none;
+        padding: 10px 16px;
+        @include border-radius(30px);
+        &:hover {
+          cursor: pointer;
+        }
+        &:active {
+          background-color: lighten($color3, 5%);
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      button.agregar.disabled {
+        color: #000;
+        background-color: #ccc;
+        &:hover {
+          cursor: default;
+        }
+      }
+
+      .notificacion {
+        display: block;
+        position: relative;
+        font-size: 12px;
+        color: #ec967b;
+        margin-top: 10px;
+        height: 20px;
+      }
+
+      .descripcion {
+        font-size: 12px;
+        color: #666;
+      }
+    }
+  }
+
+  ul.menu-colores {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 0 0 15px 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+    li {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 5px;
+      margin-bottom: 5px;
+
+      @media (max-width: 575.98px) {
+        width: 40px;
+        height: 40px;
+      }
+
+      img {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .precio {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Roboto";
+  }
+}

@@ -1,0 +1,24 @@
+
+p{
+    font-family: $font-2;
+    font-size: 14px;
+}
+
+.flex--center-center{
+    display:flex;
+    width:100%;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.img-center{
+    display: block;
+    position:relative;
+    margin: 0 auto;
+}
+
+.txt-center{
+    text-align:center;
+}

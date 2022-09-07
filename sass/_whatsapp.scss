@@ -1,0 +1,117 @@
+
+.whatsapp-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 60px;
+    border-radius: 20px;
+    margin: 60px 0;
+    background-color: #d8f4e4;
+    overflow:hidden;
+
+    @media(max-width: 575.98px){
+        flex-direction: column;
+        margin: 15px 0;
+        padding: 30px 0px;
+    }
+
+    .pin{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 90px;
+        left:30px;
+        animation: fadeInDown 1s ease forwards;
+        @media(max-width: 575.98px){
+            display:none;
+        }
+    }
+    
+    .texto{
+        padding: 30px;
+        h2{
+            font-family: 'Roboto';
+            font-size: 44px;
+            font-weight: 900;
+            text-transform: uppercase;
+            opacity:0;
+            animation: fadeInLeft 1s 0.3s ease forwards;
+            @media(max-width: 575.98px){
+                font-size: 38px;
+            }
+        }
+        p{
+            color: #5b9272;
+            font-size: 28px;
+            font-family: 'Roboto';
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 1px;
+            opacity:0;
+            animation: fadeInLeft 1s 0.6s ease forwards;
+            @media(max-width: 575.98px){
+                font-size: 16px;
+                line-height: 18px;
+            }
+            
+        }
+    }
+    a.btn-whatsapp{
+        display: block;
+        position: relative;
+        height: auto;
+        border-radius: 20px;
+        padding: 9px 36px;
+        width: 300px;
+        text-align: center;
+        color: #fff;
+        background-color: #33cc33;
+        border: 5px solid #fff;
+        text-transform: uppercase;
+        margin: 0 36px;
+        opacity:0;
+        animation: fadeInUp 1s 1s ease forwards;
+        img{
+            display: block;
+            width:182px;
+        }
+    }
+
+    @keyframes fadeInUp{
+        0%{
+            opacity:0;
+            transform:translateY(200%);
+        }
+        100%{
+            opacity:1;
+            transform:translateY(0%);
+        }
+    }
+
+    @keyframes fadeInLeft{
+        0%{
+            opacity:0;
+            transform:translateX(-200%);
+        }
+        100%{
+            opacity:1;
+            transform:translateX(0%);
+        }
+    }
+
+    @keyframes fadeInDown{
+        0%{
+            opacity:0;
+            transform:translateY(-300%);
+        }
+        100%{
+            opacity:1;
+            transform:translateY(0%);
+        }
+    }
+}
+
+
+
+

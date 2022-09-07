@@ -1,0 +1,335 @@
+html, body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+
+section.notaContainer{
+    background-color: #f9e1d9;
+    img.img-nina{
+        display: block;
+        position:relative;
+        margin:15px auto;
+    }
+    div.txt-flex{
+        height:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 575.98px){
+            padding: 30px;
+        }
+    }
+}
+
+section.ventajas{
+    h2{
+        font-family: $font-2;
+        font-size:28px;
+        color: #154272;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        font-weight: 700;
+    }
+    img{
+        margin:30px auto;
+    }
+    p{ 
+        display: block;
+        position:relative;
+        margin: 30px 0;
+        font-family: $font-2;
+    }
+    p.txt-pie{
+        margin-top: 60px;
+    }
+}
+
+section.beneficios{
+    padding:60px 0;
+
+    @media (max-width:575.98px){
+        padding:0;
+    }
+
+    h3{
+        color: #154272;
+        letter-spacing: 1px;
+        font-size:28px;
+        margin-bottom:30px;
+        font-family: $font-2;
+        font-weight: 700;
+        span{
+            display: inline-block;
+            font-size: 48px;
+        }
+        @media (max-width:575.98px){
+            text-align:center;
+        }
+    }
+
+    img.img-accordion{
+        display: block;
+        position:relative;
+        width: 260px;
+        @media (max-width:575.98px){
+           display: none;
+        }
+    }
+
+    #accordion{
+        display: block;
+        padding-left: 60px;
+        border: none;
+        @media (max-width: 575.98px){
+            padding-left:0;
+            margin-bottom: 30px;
+        }
+        .card{
+            border: 1px solid transparent;
+            .card-header {
+                border-bottom: 1px solid rgb(243, 182, 182);
+                background-color: #fff;
+                padding:0;
+                .btn{
+                    display: block;
+                    padding: 1rem;
+                    width: 100%;
+                    text-align: left;
+                    color: #154272;
+                    font-size: 18px;
+                    font-family: $font-2;
+                    font-weight: 700;
+                    background-repeat: no-repeat;
+                    background-size: 23px 13px;
+                    background-position: center right 20px;
+
+                    &:hover, &:focus{
+                        text-decoration: none;
+                    }
+                    &.btn-link{
+                        background-image: url(../images/arrow-2.png);
+                    }
+                    &.btn-link.collapsed{
+                        background-image: url(../images/arrow-1.png);
+                    }
+                }
+            }
+            .card-body{
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+
+
+.logo-kit-nubes{
+    display: block;
+    position:relative;
+    margin: 30px auto;
+    width:220px;
+}
+
+section.kit-nubes{
+    position: relative;
+    padding-bottom: 140px;
+    @media (max-width: 575.98px){
+        padding-bottom: 60px;
+    }
+
+    .layer-cajas{
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url(../images/cajas.png);
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        background-size: 430px auto;
+        position: absolute;
+        display: block;
+        top: 0;
+        left:0;
+
+        @media(max-width: 575.98px){
+            display: none;
+        }
+    }
+
+    h3{
+        font-weight: 700;
+        font-size: 14px;
+        font-family: $font-2;
+        color: #154272;
+    }
+
+    p{
+        font-size: 14px;
+        font-family: $font-2;
+    }
+
+    ul.lista-antifaz{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        list-style: none;
+        margin: 60px 0;
+        padding:0;
+
+        @media(max-width: 575.98px){
+            flex-direction: column;
+        }
+            
+        li{
+            display: block;
+            padding:0;
+            margin:0 15px;
+            @media(max-width: 575.98px){
+                margin:15px 0;
+            }
+            img{
+                display: block;
+                padding:0;
+                margin:0;
+            }
+        }
+    }
+
+    ul.lista-materiales{
+
+        list-style: none;
+        margin: 30px 0;
+        padding:0 0 0 10px;
+            
+        li{
+            display: block;
+            padding:10px 0 10px 30px;
+            background-image:url(../images/estrella.png);
+            background-position:left center;
+            background-repeat: no-repeat;
+            font-size: 14px;
+        }
+    }
+}
+
+section.lo-quiero{
+    background-image:url(../images/cafecito.png), url(../images/nube-4.png);
+    background-position:-7px bottom, center top;
+    background-repeat: no-repeat;
+    background-size: 341px auto, 100% auto;
+    padding:0;
+    padding-top: 220px;
+    margin-top: -262px;
+
+    @media (max-width: 575.98px){
+        background-image:url(../images/nube-4.png);
+        background-position:center top;
+        background-repeat: no-repeat;
+        background-size:100% auto;
+        padding:0;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        margin-top: 0;
+    }
+
+    .btn-txt-container{
+        display: flex;
+        position:relative;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height:560px;
+        @media (max-width: 575.98px){
+            flex-direction: column;
+            height: auto;
+        }
+    }
+
+    .btn-container{
+        display: flex;
+        position:relative;
+        padding: 15px 0;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        @media (max-width: 575.98px){
+            flex-direction: column;
+        }
+    }
+    
+    .big-btn{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding:30px;
+        width: 340px;
+        height: 98.8889px;;
+        border-radius: 20px;
+        margin: 30px;
+        text-align: center;
+        border: 0 solid transparent;
+        transition: all 0.2s ease-in; 
+        box-sizing: unset;
+        
+        @media (max-width: 575.98px){
+            flex-direction: column;
+            width: 236px;
+            padding:0;
+            margin: 15px 0;
+        } 
+
+        &:hover{
+            text-decoration: none;
+            cursor: pointer;
+            transform: translateY(-5px);display: flex;
+            /*
+            border-bottom: 0px solid #F39F91 !important;
+            border-right: 0px solid #F39F91 !important;
+            */
+        }
+
+        span{
+            display:block;
+            position:relative;
+            font-weight: 700;
+            font-size:26px;
+            font-family: $font-2;
+            color: #000;
+            @media (max-width: 575.98px){
+                font-size:20px;
+            }
+        }
+
+        span:nth-child(2){
+            font-weight: 500;
+            font-size:20px; 
+            @media (max-width: 575.98px){
+                font-size:16px;
+            }
+        }
+
+        &.big-btn-red{
+            border-bottom: 4px solid #F39F91;
+            border-right: 4px solid #F39F91;
+            background-color: #EFC1BB;
+            span:nth-child(2){
+                color: #AA7068;
+            }
+        }
+        &.big-btn-blue{
+            border-bottom: 4px solid #78C8D7;
+            border-right: 4px solid #78C8D7;
+            background-color: #CBEBF7;
+            span:nth-child(2){
+                color: #50858C;
+            }
+        }
+
+    }
+}
+
+
+
+

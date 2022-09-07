@@ -1,0 +1,349 @@
+.pedido-container.oculto{
+	transform: translateY(calc(100vh));
+}
+
+.pedido-container.active{
+	
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	transform: translateY(0);
+		.btn-cerrar{
+		opacity: 0.5;
+	}
+
+	.btn-ver-pedido{
+		position: absolute;
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
+	}
+}
+
+.pedido-container{
+    display: block;
+    position: fixed;
+    width: 100%;
+	margin: 0 auto;
+	padding-top: 54px;
+    height: 100vh;
+    z-index: 9999;
+    top: 0;
+    background-color: #fff;
+    transform: translateY(calc(100vh - 54px));
+	transition: all 0.5s ease;
+
+	border-top-right-radius: 20px;
+		border-top-left-radius: 20px;
+	
+	.pedido-content{
+		display: block;
+		position: relative;
+		padding: 15px 15px 90px 15px;
+		width: 100%;
+		max-width: 600px;
+		margin: 0 auto;
+		background-color: #fff;
+		height: 100%;
+		overflow: scroll;
+		border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+
+		@media (max-width: 575.98px){
+			padding: 15px 15px 90px 15px;
+		}
+
+		p.aviso{
+			color:#ccc;
+			text-align:center;
+			font-size:14px;
+			padding: 10px 0;
+   			margin: 5px 0;
+		}
+		
+	}
+	table.pedido{
+		width:100%;
+		border:1px solid #f1f1f1;
+		tr{
+			border-bottom: 1px solid #f1f1f1;
+		}
+		td, th{
+			text-align: left;
+			padding:3px 10px;
+			font-size:13px;
+		}
+		th{
+			padding-top:5px;
+			padding-bottom:5px;
+			background-color:#f1f1f1;}
+
+	}
+	.costo-total{
+		color: #000;
+		font-weight:bold;
+		font-size: 22px;
+		text-align: center;
+		padding:10px;
+	}
+	.btn-delete-row{
+		display: block;
+		position: absolute;
+		color: #ccc;
+		border: none;
+		border-radius: 0;
+		background: none;
+		line-height: 1.7em;
+		text-align: center;
+		padding: 0;
+		width: 100%;
+		right: 6px;
+		top:0;
+		i{
+			line-height: 1.7em;
+		}
+		&:hover{
+			color: red;
+			cursor: pointer;
+		}
+	}
+}
+
+
+.btn-ver-pedido{
+	position: absolute;
+    top: 0;
+    z-index: 999;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: #f3b639;
+	padding: 15px 15px;
+	justify-content: center;
+	align-items: center;
+    margin-top: 0;
+	transition: all 1s ease;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	
+	&:hover{
+		color: #000;
+		background-color:#f3b639;
+		cursor:pointer;
+	}
+	&:focus{
+		outline: none;
+		border:1px solid #fff;
+	}
+
+	.btn-cerrar{
+		position: absolute;
+		right: 15px;
+		font-size: 20px;
+		top: 13px;
+		opacity: 0;
+		transition: opacity 1s ease;
+	}
+
+	@media (max-width: 767px){
+		margin-top: 0;
+	}
+
+
+	
+}
+
+
+
+p.costo{
+	color:#000;
+	font-size:16px;
+}
+
+#unidades-totales{
+	display: none;
+	position: relative;
+	text-align: center;
+    /* top: -12px; */
+    left: none;
+    width: 24px;
+    height: 24px;
+    background-color: #ffcc33;
+    color: #000;
+    left: 9px;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 13px;
+    transform-origin: bottom center;
+    animation-name: none;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+	animation-play-state: running;
+	
+	@keyframes salta{
+		0%{
+			transform: scale(1) translateY(0);
+		}
+		10%{
+			transform: scale(1, 0.5) translateY(0);
+		}
+		40%{
+			transform: scale(1, 1.2) translateY(-160%);
+		}
+		60%{
+			transform: scale(1) translateY(0%);
+		}
+	
+		100%{
+			transform: scale(1) translateY(0%);
+		}
+	}
+}
+
+p.notificacion{
+	color: $color1;
+}
+
+form.form-pedido{
+	margin-top: 15px;
+	input[type="text"],
+	input[type="number"],
+	input[type="email"], 
+	select{
+			display:block;
+			position:relative;
+			font-size:16px;	
+			width:100%;
+			font-weight: 400;
+			background-color:#fff;
+			border:1px solid #ccc;
+			padding:10px 10px;
+			margin-bottom:15px;
+			-webkit-appearance: none;
+			@include border-radius(5px);
+	}
+
+	select{
+		padding:8px 10px; // diferencia con el resto de los inputs para que queden parejos
+	}
+
+	input[type="submit"]{
+		display: block;
+		position: relative;
+		width: 100%;
+		max-width: 300px;
+		background-color: #ec967b;
+		padding: 15px 10px;
+		margin: 15px auto 0 auto;
+		color: #fff;
+		font-size: 16px;
+		box-shadow: none;
+		border: 1px solid transparent;
+		@include border-radius(30px);
+		}
+	input[type="submit"]:hover,
+	input[type="submit"]:focus{
+			cursor:pointer;
+			color:$color3;
+			background-color:#fff;
+			border: 1px solid $color3;
+		}
+
+	input.direccion{display:none;}
+	
+	p.checkbox-text{
+			display: inline-block;
+    		color: red;
+    		font-size:12px;
+		}
+
+}
+
+.check-icon{
+	display: block;
+    position: relative;
+    margin: 10px auto;
+    width: 100px;
+}
+
+.item-producto{
+	display: block;
+	position: relative;
+	padding:15px 0;
+	img{
+		display: block;
+		position: relative;
+		width: 100%;
+		border-radius: 5px;
+	}
+	h3{
+		display: block;
+		position:relative;
+		font-size: 16px;
+		text-align:left;
+		margin-top:0px;
+		margin-bottom: 0;
+		padding:0;
+	}
+	h4{
+		display: block;
+		position:relative;
+		font-size: 14px;
+		text-align:left;
+		margin-top:3px;
+		margin-bottom: 0;
+		padding:0;
+	}
+	p{
+		display: block;
+		position:relative;
+		font-size: 14px;
+		text-align:left;
+		margin-top: 5px;
+		margin-bottom: 0;
+		padding:0;
+		color: #666;
+	}
+}
+
+/* ++++++++++++++++++++ BLINK +++++++++++++++ */
+/*
+.blink{
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-iteration-count: infinite;
+    
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+@-moz-keyframes blinker {  
+    0% { background-color:$color2; }
+    50% { background-color:#fff; }
+    100% { background-color:$color2; }
+}
+@-webkit-keyframes blinker {  
+    0% { background-color:$color2; }
+    50% { background-color:#fff; }
+    100% { background-color:$color2; }
+}
+@keyframes blinker {  
+    0% { background-color:$color2; }
+    50% { background-color:#fff; }
+    100% { background-color:$color2; }
+}
+*/

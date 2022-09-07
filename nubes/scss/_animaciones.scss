@@ -1,0 +1,73 @@
+@keyframes backAnim{
+    to{
+        background-position: bottom -93px right 2000px, bottom -80px left 2000px;
+    }
+}
+
+@keyframes backAnimMobile{
+    to{
+        background-position: bottom -145px right 2000px, bottom -140px left 2000px;
+    }
+}
+
+
+
+@keyframes caidaReboteAnim{
+    0%{transform: translateY(-300%)  rotate(-5deg) }
+    50%{transform: translateY(15%)  rotate(-5deg) }
+    65%{transform: translateY(-3%)   rotate(-5deg) }
+    85%{transform: translateY(1%)   rotate(-5deg) }
+    100%{transform: translateY(0%)    rotate(-5deg) }  
+}
+
+@keyframes balanceoAnim{
+    from{
+        transform: rotate(-5deg);
+    }
+    to{
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes flotarAnim{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes flechaAnim{
+    to{
+        transform: translateY(10px);
+    }
+}
+
+
+@keyframes popAnim{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    65%{
+        opacity: 1;
+        transform: scale(1.3);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) rotate(-10deg);
+    }
+}
+
+
+@keyframes popAnimAfter{
+    from{
+        opacity:1;
+        transform: rotate(-10deg);
+    }
+    to{
+        opacity:1;
+        transform: rotate(10deg);
+    }
+}
