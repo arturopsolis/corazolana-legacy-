@@ -8,7 +8,8 @@
   $telefono     = htmlspecialchars ($_POST["telefono"]);
   $email        = htmlspecialchars ($_POST["email"]);
   $total        = htmlspecialchars ($_POST["total"]);
-  $captcha        = htmlspecialchars ($_POST["captcha"]);
+  $captcha      = htmlspecialchars ($_POST["captcha"]);
+  $captcha      = intval($captcha);
 
   $tablaPedido  = $_POST["input-tabla"];
   //$tablaPedido  = str_replace('<td><button class="btn-delete-row">X</button></td>', "", $tablaPedido);
@@ -47,7 +48,7 @@
   $message       .= "(Pedido sujeto a existencias) <br> Te mando un gran abrazo.";
   $message       .= "</p>";
   
-  if (isset($captcha)) {
+  if ($captcha === 10) {
     mail($to,utf8_decode($subject),utf8_decode($message),$headers);
   }
 
