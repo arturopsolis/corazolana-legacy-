@@ -18,7 +18,7 @@
   $total        = $_POST["total"];
 
   $recipients = array(
-    "pedidos@corazolana.com", "arturopsolis@gmail.com", $email
+    "pedidos@corazolana.com", $email,
   );
   
   $to     = implode(',', $recipients);
@@ -27,7 +27,7 @@
   $headers        = "MIME-Version: 1.0" . "\r\n";
   $headers       .= "Content-type:text/html;charset=UTF-8" . "\r\b";
   $headers       .= "From: Corazolana.com";
-
+  $message       .= "";
   $message       .= "<img src='" . $ruta . "/images/logo-corazolana-completo.png' style='display:block;position:relative;width:150px;margin:30px auto; text-transform: uppercase'/>";
   $message       .= "<p style='font-size: 22px; display:block;width:100%;max-width:600px;margin:15px auto;text-align:center;margin-bottom:30px'>";  
   $message       .=   "<strong>¡Hola " .$nombre ."!</strong>"; 
