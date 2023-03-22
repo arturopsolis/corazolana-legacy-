@@ -71,7 +71,9 @@
         <div class="col-12">
           <input type="number" name="cp" placeholder="Código Postal" required>
         </div>
-        
+        <div class="col-12">
+          <input type="number" name="captcha" placeholder="5+5" required>
+        </div>
       </div>
 
       <div class="row">
