@@ -234,9 +234,9 @@
                     <span>Quiero el patrón</span>
                     <span>Suscríbete y recibelo gratis</span>
                 </a-->
-                <a href="https://bazarama.com/producto/5f80af75c6572b29977f3fc2" target="_blank" class="big-btn big-btn-blue wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" target="_blank">
-                  <span>Quiero el kit</span>
-                  <span>Todo lo que necesitas <br> para realizar tu antifaz</span>
+                <a href="#" target="_blank" class="big-btn big-btn-blue wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" target="_blank">
+                  <span>Agotado</span>
+                  <span>Lo sentimos, <br> este producto esta agotado</span>
                 </a>
               </div>
               <p class="txt-center">
@@ -258,7 +258,6 @@
       <ul class="redes-sociales">
         <li><a href="https://www.instagram.com/corazolana/" class="btn-instagram" target="_blank"><img src="images/ico_instagram.svg" class="wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s"></a></li>
         <li><a href="https://www.facebook.com/Corazolana/" class="btn-facebook" target="_blank"><img src="images/ico_facebook.svg" class="wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"></a></li>
-        <li><a href="https://wa.me/525585808076?text=¡Hola!"" class="btn-whatsapp" target="_blank"><img src="images/ico_whatsapp.svg" class="wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s"></a></li>
       </ul>
       <div class="creado-por">
           <div>CORAZOLANA © 2020</div>

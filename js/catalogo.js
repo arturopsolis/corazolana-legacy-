@@ -36,7 +36,7 @@ const productos = [
       ["Ultra marino", 6, "color-Cord-ultramarino-r.jpg", "#343952"],
       ["Vino", 0, "color-Cord-vino-r.jpg", "#343952"],
       ["Rojo", 4, "color-Cord-rojo-r.jpg", "#343952"],
-      ["Ocre", 7, "Cordon-algodon-hilo-ocre.jpg", "#c9a306"],
+      ["Ocre", 5, "Cordon-algodon-hilo-ocre.jpg", "#c9a306"],
       ["Amarillo mango", 0, "color-Cord-amarillo-r.jpg", "#fcce08"],
       ["Amarillo soft", 4, "color-Cord-amarillosoft-r.jpg", "#f4e295"],
       ["Negro", 6, "color-Cord-negro-r.jpg", "#343952"],
@@ -278,7 +278,7 @@ const productos = [
     imagenes: ["boye_tpins-bloqueadores.jpg"],
     enlace: "",
     categoria: "",
-    colores: [["T-Pines", 3, "boye_tpins-bloqueadores.jpg", "#E1E0DE"]],
+    colores: [["T-Pines", 2, "boye_tpins-bloqueadores.jpg", "#E1E0DE"]],
   },
   {
     id: "5",
@@ -350,7 +350,7 @@ const productos = [
     colores: [
       [
         "Rosa-Morado Grande",
-        2,
+        1,
         "cables-guardapuntos-tejido-crochet-grande-rosa-morado.jpg",
         "#0C46A2",
       ],
@@ -370,7 +370,7 @@ const productos = [
     imagenes: ["marcador-de-puntos-tejido-mickey.jpg"],
     enlace: "",
     categoria: "",
-    colores: [["Mickey", 4, "marcador-de-puntos-tejido-mickey.jpg", "#0C46A2"]],
+    colores: [["Mickey", 3, "marcador-de-puntos-tejido-mickey.jpg", "#0C46A2"]],
   },
   {
     id: "9",
@@ -770,7 +770,7 @@ const productos = [
       ],
       [
         "Crudo",
-        7,
+        2,
         "algodon-reciclado.mexicano-tejido-crochet-crudo.jpg",
         "#9DF3FB",
       ],
@@ -919,7 +919,7 @@ const productos = [
       ["Azul jeans", 0, "color-estambre-azulmezclilla-r.jpg", "#8299B7"],
       ["Azul mezclilla", 2, "color-estambre-azulmezclilla-v2.jpg", "#8299B7"],
       ["Azul rey", 0, "color-estambre-azulrey.jpg", "#4A72DB"],
-      ["Azul marino", 13, "color-estambre-azulmarino-r.jpg", "#3E476C"],
+      ["Azul marino", 5, "color-estambre-azulmarino-r.jpg", "#3E476C"],
       ["Blanco", 7, "color-estambre-blanco-r.jpg", "#F1EEE9"],
       ["Azúcar", 10, "color-estambre-azucar.jpg", "#f9f6ea"],
       ["Marfil", 0, "color-estambre-marfil.jpg", "#FFF9F0"],
@@ -1023,7 +1023,7 @@ const productos = [
       ,
       [
         "Rojo",
-        6,
+        0,
         "hilo-lana-algodon-tejido-natural-textil-cancas-rojo.jpg",
         "#46775a",
       ],
@@ -1405,7 +1405,7 @@ const productos = [
       ],
       [
         "2.5 mm",
-        1,
+        0,
         "gancho_bambu_crochet_tejido-lineadecorazon.jpg",
         "#0C46A2",
       ],
@@ -1417,7 +1417,7 @@ const productos = [
       ],
       [
         "3.5 mm",
-        2,
+        1,
         "gancho_bambu_crochet_tejido-lineadecorazon.jpg",
         "#0C46A2",
       ],
@@ -1429,7 +1429,7 @@ const productos = [
       ],
       [
         "4.5 mm",
-        3,
+        2,
         "gancho_bambu_crochet_tejido-lineadecorazon.jpg",
         "#0C46A2",
       ],
@@ -1582,10 +1582,10 @@ const productos = [
     enlace: "",
     categoria: "",
     colores: [
-      ["Brush", 8, "Tope-agujas-tejido-knit-tulipa-brush.jpg", "#E1E0DE"],
+      ["Brush", 6, "Tope-agujas-tejido-knit-tulipa-brush.jpg", "#E1E0DE"],
       [
         "Cotton Candy",
-        6,
+        4,
         "Tope-agujas-tejido-knit-tulipa-cottoncandy.jpg",
         "#E1E0DE",
       ],
@@ -1667,7 +1667,7 @@ const productos = [
     imagenes: ["Boyer-borlas.jpg"],
     enlace: "",
     categoria: "",
-    colores: [["Tassel Maker", 2, "Boyer-borlas.jpg", "#E1E0DE"]],
+    colores: [["Tassel Maker", 1, "Boyer-borlas.jpg", "#E1E0DE"]],
   },
   {
     id: "36",
@@ -1688,6 +1688,50 @@ const productos = [
       ["Bowl Amarillo 1", 1, "bowl-ovillo-amarillo1.jpg", "#E1E0DE"],
       ["Bowl - Azul", 1, "bowl-ovillo-azul.jpg", "#E1E0DE"],
       ["Bowl Amarillo 2", 1, "bowl-ovillo-amarillo2.jpg", "#E1E0DE"],
+    ],
+  },
+  {
+    id: "37",
+    nombre: "Project bag - Pink",
+    tachado: "",
+    precio: "400.00",
+    composicion:
+      "Bolsa de proyecto (diferentes tipos de tela), incluye 10 marcadores tipo pera color  y un aro para poder colgar tijeras o marcadores color rose gold.",
+    peso: "n/a",
+    metros: "25 x 12 x 21 cm",
+    grosor: "---",
+    agujas: "n/a",
+    carpeta: "bolsa-proyecto",
+    imagenes: [
+      "Bolsadeproyectos-projectbag-lana-algodon-tejido-pink-cuadrosclaro-puffyheart.jpg",
+    ],
+    enlace: "",
+    categoria: "bolsas",
+    colores: [
+      [
+        "Petal",
+        3,
+        "Bolsadeproyectos-projectbag-lana-algodon-tejido-pink--petal.jpg",
+        "#0C46A2",
+      ],
+      [
+        "Hot pink",
+        1,
+        "Bolsadeproyectos-projectbag-lana-algodon-tejido-pink-cuadrosclaro-hotpink.jpg",
+        "#0C46A2",
+      ],
+      [
+        "Puffy heart",
+        2,
+        "Bolsadeproyectos-projectbag-lana-algodon-tejido-pink-cuadrosclaro-puffyheart.jpg",
+        "#0C46A2",
+      ],
+      [
+        "Rasberry",
+        2,
+        "Bolsadeproyectos-projectbag-lana-algodon-tejido-pink-cuadrosocuro-rasberry.jpg",
+        "#0C46A2",
+      ],
     ],
   },
 ];
